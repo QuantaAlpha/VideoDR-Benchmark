@@ -6,11 +6,11 @@
 
 ---
 
-## 🔥 News
+# 🔥 News
 * **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from 
 * **`2026.01.11`** 🌟 We are very proud to launch VideoDR, the first-ever video deep research benchmark!
 
----
+
 
 # 🎥 Video Deep Research | VideoDR
 
@@ -24,11 +24,11 @@ It is designed to evaluate the capability of Multimodal Large Language Models to
 * 🌍 **Interactive Search**: Interact with a browser environment to perform multi-hop deep search.
 * 🧩 **Evidence Synthesis**: Combine video clues and web evidence to provide a **verifiable** factual answer.
 
----
 
-# Evaluation Pipeline
 
----
+# 📊 Eval Pipeline
+
+
 
 # 🔧 Failure Analysis Tool
 
