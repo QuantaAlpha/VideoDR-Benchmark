@@ -1,8 +1,8 @@
-# Watching, Reasoning and Searching: A Video Deep Research Benchmark on Open Web for Agentic Video Reasoning
-
-<font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
+# VideoDR: A Video Deep Research Benchmark on Open Web for Agentic Video Reasoning
 
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
+
+<font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
 
 ---
 
