@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Benchmark-VideoDR-007EC6" alt="Benchmark">
 </p>
 
-![VideoDR Task Overview](./assets/figure2.png)
+![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
 
 <font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
 
