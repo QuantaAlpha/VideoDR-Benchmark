@@ -1,17 +1,11 @@
 # Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis
 
-![VideoQA](https://img.shields.io/badge/Task-VideoQA-red) 
-![Multi-Modal](https://img.shields.io/badge/Task-Multi--Modal-red) 
-![Video-MME](https://img.shields.io/badge/Dataset-Video--MME-blue)  
-![Gemini](https://img.shields.io/badge/Model-Gemini-green) 
-![GPT-4V](https://img.shields.io/badge/Model-GPT--4V-green) 
-![GPT-4o](https://img.shields.io/badge/Model-GPT--4o-green)
 
 <p align="center">
     <img src="./asset/name_logo.jpg" width="100%" height="100%">
 </p>
 
-<font size=7><div align='center' > [[📖 Paper](https://arxiv.org/pdf/2405.21075)] [[📊 Dataset](https://github.com/BradyFU/Video-MME?tab=readme-ov-file#-dataset)] </div></font>
+<font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
 
 ---
 
