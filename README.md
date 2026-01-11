@@ -2,7 +2,7 @@
 
 <font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
 
-![VideoDR Task Overview](./assets/.png)
+![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png.png)
 
 ---
 
