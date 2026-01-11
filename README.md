@@ -5,6 +5,9 @@
   <img src="https://img.shields.io/badge/Paradigm-Agentic_%26_Workflow-C92D39" alt="Paradigm">
   <img src="https://img.shields.io/badge/Benchmark-VideoDR-007EC6" alt="Benchmark">
 </p>
+
+![VideoDR Task Overview](./assets/figure2.png)
+
 <font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
 
 ---
