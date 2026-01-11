@@ -1,5 +1,10 @@
 # VideoDR: A Video Deep Research Benchmark on Open Web for Agentic Video Reasoning
 
+![Task](https://img.shields.io/badge/Task-Video_Deep_Research-C92D39)
+![Benchmark](https://img.shields.io/badge/Task-Agentic_Workflow-C92D39)
+
+![Benchmark](https://img.shields.io/badge/Dataset-VideoDR-007EC6) [![Paper](https://img.shields.io/badge/Paper-Arxiv-b31b1b)](https://arxiv.org/...) [![Website](https://img.shields.io/badge/Website-Visit_Now-blue)](https://...)
+
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
 
 <font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
