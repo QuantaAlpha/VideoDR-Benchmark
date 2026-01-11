@@ -14,9 +14,9 @@
 
 🚀 **VideoDR** is the **first** video deep research benchmark!
 
-It is designed to evaluate the capability of Multimodal Large Language Models (**MLLMs**) 🤖 to perform **complex reasoning** 🧠 based on video content while leveraging the **Open Web** 🌐.
+It is designed to evaluate the capability of Multimodal Large Language Models to perform complex reasoning based on video content while leveraging the Open Web 🌐.
 
-#### VideoDR requires the Agent to possess the following core capabilities 👇:
+#### 👇 VideoDR requires the Agent to possess the following core capabilities:
 
 * 🎞️ **Multi-frame Visual Cues**: Accurately identify continuous key information from multiple video frames.
 * 🌍 **Interactive Search**: Interact with a browser environment to perform multi-hop deep search.
