@@ -2,11 +2,13 @@
 
 <font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
 
+![VideoDR Task Overview](./assets/.png)
+
 ---
 
 ## 🔥 News
-* **`2026.01.11`** 🌟 We release the data of VideoDR. You can 
-* **`2026.01.11`** 🌟 We are very proud to launch VideoDR, the first-ever video deep research benchmark in the Video Domain!
+* **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from 
+* **`2026.01.11`** 🌟 We are very proud to launch VideoDR, the first-ever video deep research benchmark!
 
 ---
 
