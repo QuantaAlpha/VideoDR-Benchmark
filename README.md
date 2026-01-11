@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img src="./asset/name_logo.jpg" width="100%" height="100%">
+    <img src="./assets/name_logo.png" width="100%" height="100%">
 </p>
 
 <font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
@@ -24,10 +24,50 @@ In real-world video question answering scenarios, videos often provide only loca
 </p>
 
 ## 🔮 Evaluation Pipeline
-📍 **Extract Frames and Subtitles**:
+## 🔮 Evaluation Pipeline
 
+📍 **Extract Frames and Subtitles**: Sample key frames across the video timeline and extract subtitles (if any) to enable cross-frame visual and textual input for MLLMs.
+
+📍 **Input Preparation**: Provide video frames/subtitles and question Q to the model under Workflow (two-stage: cue extraction first) or Agentic (end-to-end) paradigm.
+
+📍 **Cue Extraction (Workflow Only)**: Use MLLM to identify and structure question-relevant multi-frame visual anchors as intermediate text.
+
+📍 **Iterative Retrieval**: Generate search queries based on video cues, call browser search tool S to fetch web evidence iteratively.
+
+📍 **Multi-Hop Reasoning**: Reflect with think tool, integrate video anchors and web evidence to verify facts and resolve the query.
+
+📍 **Output Answer**: Produce unique factual answer A grounded in joint evidence.
+
+📍 **Evaluation**: Use LLM-as-judge (e.g., DeepSeek-V3) to score semantic equivalence to gold answer, compute accuracy across difficulty, duration, and domain strata.
 
 ## 📈 Experimental Results
 
+Table 1 compares the performance of various models under Workflow and Agentic settings across different difficulty levels, showing a general decline in accuracy as difficulty increases.
 
+<p align="center">
+    <img src="./assets/table1.png" width="100%" height="100%">
+</p>
 
+Table 2 compares the performance of models under Workflow and Agentic settings across short, medium, and long video durations, highlighting how longer videos amplify differences between paradigms.
+
+<p align="center">
+    <img src="./assets/table2.png" width="100%" height="100%">
+</p>
+
+Table 3 compares model performance under Workflow and Agentic settings across semantic domains like History, Geography, and Technology, revealing domain-specific advantages of each paradigm.
+
+<p align="center">
+    <img src="./assets/table3.png" width="100%" height="100%">
+</p>
+
+Table 4 presents tool-use statistics for think and search calls along with runtime under Workflow and Agentic paradigms, indicating no direct correlation between tool usage and accuracy.
+
+<p align="center">
+    <img src="./assets/table4.png" width="100%" height="100%">
+</p>
+
+Table 5 distributes error types across models in both Workflow and Agentic settings, identifying Categorical Error as the dominant failure mode and Numerical Error as a persistent weakness.
+
+<p align="center">
+    <img src="./assets/table5.png" width="100%" height="100%">
+</p>
