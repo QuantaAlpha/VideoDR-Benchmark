@@ -13,7 +13,7 @@
 ---
 
 # 🔥 News
-* **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from 
+* **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from [there](https://huggingface.co/datasets/Yu2020/VideoDR).
 * **`2026.01.11`** 🌟 We are very proud to launch VideoDR, the first-ever video deep research benchmark!
 
 
