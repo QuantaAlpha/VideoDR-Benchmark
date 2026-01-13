@@ -8,7 +8,7 @@
 
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
 
-<font size=7><div align='center' > [[📖 Paper]()] [[📊 Dataset]()] </div></font>
+<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset](https://huggingface.co/datasets/Yu2020/VideoDR)] </div></font>
 
 ---
 
