@@ -31,11 +31,6 @@ It is designed to evaluate the capability of Multimodal Large Language Models to
 * 🧩 **Evidence Synthesis**: Combine video clues and web evidence to provide a **verifiable** factual answer.
 
 
-
-# 📊 Eval Pipeline
-
-
-
 # 🔧 Failure Analysis Tool
 
 We provide an LLM-based failure analysis tool (`llm_as_judge`) to automatically classify failure cases into different error categories based on trace analysis.
