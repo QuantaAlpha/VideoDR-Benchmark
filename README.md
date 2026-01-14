@@ -86,3 +86,10 @@ If you find this benchmark useful for your research, please cite:
   year={2026}
 }
 ```
+
+# ✉️ Contact
+
+
+**Have a question?** If you have any questions or just want to say hi, feel free to reach out:
+
+📧 **Email:** [yuxm02@gmail.com](mailto:yuxm02@gmail.com)
