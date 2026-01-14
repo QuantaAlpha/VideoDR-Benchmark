@@ -13,6 +13,7 @@
 ---
 
 # 🔥 News
+* **`2026.01.14`** 🏷️ We update `VideoDR.csv` with additional `Category` and `Difficulty` labels.
 * **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from [there](https://huggingface.co/datasets/Yu2020/VideoDR).
 * **`2026.01.11`** 🌟 We are very proud to launch [VideoDR](http://arxiv.org/abs/2601.06943), the first-ever video deep research benchmark!
 
