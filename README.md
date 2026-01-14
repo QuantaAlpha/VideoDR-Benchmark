@@ -73,3 +73,16 @@ python llm_as_judge/src/analyze_failure_types.py \
 - `--trace_dir`: Directory with trace JSON files (default: `traces`)
 - `--models`: Model keys to analyze: `qwen`, `internvl`, `minicpm`, `gpt4o`, `gemini`, `gpt52` (default: all)
 - `--max_workers`: Concurrent workers (default: 4)
+
+# 📚 Citation
+
+If you find this benchmark useful for your research, please cite:
+
+```bibtex
+@article{liu2026watching,
+  title={Watching, Reasoning, and Searching: A Video Deep Research Benchmark on Open Web for Agentic Video Reasoning},
+  author={Liu, Chengwen and Yu, Xiaomin and Chang, Zhuoyue and Huang, Zhe and Zhang, Shuo and Lian, Heng and Wang, Kunyi and Xu, Rui and Hu, Sen and Hou, Jianheng and others},
+  journal={arXiv preprint arXiv:2601.06943},
+  year={2026}
+}
+```
