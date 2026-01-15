@@ -8,11 +8,13 @@
 
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
 
-<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset](https://huggingface.co/datasets/Yu2020/VideoDR)] </div></font>
+<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset](https://huggingface.co/datasets/Yu2020/VideoDR)] [[🌐 LeaderBoard](https://videodr-benchmark.github.io/#/home)] </div></font>
 
 ---
 
 # 🔥 News
+
+* **`2026.01.15`** 🌐 Our [Official LeaderBoard](https://videodr-benchmark.github.io/#/home) is now live! Welcome to test and submit.
 * **`2026.01.14`** 🏷️ We update `VideoDR.csv` with additional `Category` and `Difficulty` labels.
 * **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from [there](https://huggingface.co/datasets/Yu2020/VideoDR).
 * **`2026.01.11`** 🌟 We are very proud to launch [VideoDR](http://arxiv.org/abs/2601.06943), the first-ever video deep research benchmark!
