@@ -52,15 +52,17 @@ LLM_BASE_URL=your_api_base_url
 LLM_API_KEY=your_api_key
 ```
 
-### Usage
+### LLM as Judge
 
-```bash
-# Model evaluation
+```
 python llm_as_judge/src/judge_answers.py \
     --workers 5 \
     --predictions llm_as_judge/data/predictions.json
+```
 
-# Failure analysis
+### Failure analysis
+
+```
 python llm_as_judge/src/analyze_failure_types.py \
     --excel_file llm_as_judge/data/Video-LLM.xlsx \
     --trace_dir results/traces \
