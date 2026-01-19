@@ -14,7 +14,7 @@
 
 # 🔥 News
 
-* **`2026.01.15`** 🤖 We have updated our code on the workflow and the agentic paradigm. You can find it in [there](https://github.com/QuantaAlpha/VideoDR-Benchmark/tree/main/videoDR-Agent).
+* **`2026.01.19`** 🤖 We have updated our code on the workflow and the agentic paradigm. You can find it in [there](https://github.com/QuantaAlpha/VideoDR-Benchmark/tree/main/videoDR-Agent).
 * **`2026.01.15`** 🌐 Our [Official LeaderBoard](https://videodr-benchmark.github.io/#/home) is now live! Welcome to test and submit.
 * **`2026.01.14`** 🏷️ We update `VideoDR.csv` with additional `Category` and `Difficulty` labels.
 * **`2026.01.12`** 🌟 We release VideoDR benchmark data. You can download it from [there](https://huggingface.co/datasets/Yu2020/VideoDR).
