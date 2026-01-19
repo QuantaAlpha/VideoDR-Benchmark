@@ -1,0 +1,34 @@
+[project]
+name = "video_deep_research"
+version = "0.0.1"
+description = "Agentic Deep Research with Video Capabilities"
+authors = [
+    { name = "Zhe Huang" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-community",
+    "langgraph",
+    "pydantic",
+    "aiohttp",
+    "tavily-python",
+    "langchain-openai",
+    "pandas",
+    "python-dotenv",
+    "numpy",
+    "PyYAML",
+]
+
+[build-system]
+requires = ["setuptools>=73.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentic_deep_research"]
+
+[tool.setuptools.package-dir]
+"agentic_deep_research" = "src/agentic_deep_research"

@@ -1,0 +1,47 @@
+# General Configuration
+common:
+  csv_input: "data/VideoDR.csv"
+  traj_dir: "trajs"
+  max_key_frame: 20
+  langchain_tracing_v2: "false"
+  videos_dir: "data/video"
+  key_frames_dir: "data/video_key_frames"
+
+# Default profile to use
+default_profile: "gemini_agentic"
+
+# Different run profiles
+profiles:
+  gemini_agentic:
+    video_format: "mp4" # "mp4" or "key_frame"
+    mode: "agentic" # "workflow" or "agentic"
+    extra_config:
+      research_model: "openai:google/gemini-2.5-flash"
+      research_model_base_url: "https://openrouter.ai/api/v1"
+  
+  gemini_workflow:
+    video_format: "mp4" # "mp4" or "key_frame"
+    mode: "workflow" # "workflow" or "agentic"
+    extra_config:
+      research_model: "openai:google/gemini-2.5-flash"
+      research_model_base_url: "https://openrouter.ai/api/v1"
+      max_researcher_iterations: 6
+      max_react_tool_calls: 2
+
+  # Full Configuration Example
+  full_example:
+    video_format: "mp4"
+    mode: "agentic"
+    extra_config:
+      research_model: "openai:google/gemini-2.5-flash"
+      research_model_base_url: "https://openrouter.ai/api/v1"
+      research_model_max_tokens: 20000
+      
+      summarization_model: "openai:qwen/qwen3-30b-a3b-instruct-2507"
+      summarization_model_base_url: "https://openrouter.ai/api/v1"
+      summarization_model_max_tokens: 20480
+      
+      max_structured_output_retries: 3
+      max_researcher_iterations: 10
+      max_react_tool_calls: 5
+      max_content_length: 10000
