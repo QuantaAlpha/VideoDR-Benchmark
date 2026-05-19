@@ -13,7 +13,7 @@
 ---
 
 # 🔥 News
-
+* **`2026.05.19`** 🤖 We have expanded the benchmark set to 500 samples. You can find it in [there](https://huggingface.co/datasets/strike20023/VideoDR).
 * **`2026.01.19`** 🤖 We have updated our code on the workflow and the agentic paradigm. You can find it in [there](https://github.com/QuantaAlpha/VideoDR-Benchmark/tree/main/videoDR-Agent).
 * **`2026.01.15`** 🌐 Our [Official LeaderBoard](https://videodr-benchmark.github.io/#/home) is now live! Welcome to test and submit.
 * **`2026.01.14`** 🏷️ We update `VideoDR.csv` with additional `Category` and `Difficulty` labels.
