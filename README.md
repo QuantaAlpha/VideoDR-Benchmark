@@ -8,7 +8,7 @@
 
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
 
-<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset](https://huggingface.co/datasets/Yu2020/VideoDR)] [[🌐 LeaderBoard](https://videodr-benchmark.github.io/#/home)] </div></font>
+<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset - 100](https://huggingface.co/datasets/Yu2020/VideoDR)] [[📊 Dataset - 500](https://huggingface.co/datasets/strike20023/VideoDR)] [[🌐 LeaderBoard](https://videodr-benchmark.github.io/#/home)] </div></font>
 
 ---
 
