@@ -13,8 +13,8 @@ This project implements an advanced deep research agent using LangGraph, capable
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/simple-videoDR.git
-   cd simple-videoDR
+   git clone https://github.com/QuantaAlpha/VideoDR-Benchmark.git
+   cd VideoDR-Benchmark/videoDR-Agent
    ```
 
 2. Install dependencies:
@@ -43,7 +43,7 @@ For running batch evaluations or tests, use `config.yaml`. This file allows you 
 Example `config.yaml`:
 ```yaml
 common:
-  csv_input: "data/Video-DR.csv"
+  csv_input: "data/test.csv"
   traj_dir: "trajs"
   max_key_frame: 20
   langchain_tracing_v2: "false"
@@ -69,15 +69,16 @@ profiles:
 ## Data Preparation 📂
 
 ### Dataset
-We use the **VideoDR** dataset. You can download it from [HuggingFace](https://huggingface.co/datasets/Yu2020/VideoDR).
-- Place `VideoDR.csv` in the `data/` directory.
-- Unzip `video.zip` to your video directory `data/videos`.
+Use the current **500-example** [VideoDR dataset](https://huggingface.co/datasets/strike20023/VideoDR). The earlier 100-example release is historical.
+
+- Download `test.csv` into `videoDR-Agent/data/test.csv`.
+- Download the contents of the dataset's `videos/` directory into `videoDR-Agent/data/video/` (`1.mp4` through `500.mp4`).
+- Run commands below from `videoDR-Agent/`. The provided configuration uses these paths.
 
 ### CSV Format
-The `eval.py` script reads the first 3 columns of the CSV file:
-1. `index`: Unique identifier for the question/video.
-2. `question`: The research question.
-3. `answer`: The ground truth answer to the question.
+The current `test.csv` has a header with `id`, `category`, `video_url`, `question`, `answer`, `evidence`, `remarks`, and `difficulty` columns. The runner selects `id`, `question`, and `answer` **by column name**, preserving textual answers. Additional annotations remain in the source CSV.
+
+Legacy headerless CSVs with `index`, `question`, `answer` as their first three columns are also supported. Headered three-column files may use either `id` or `index` for the identifier. Set `csv_input` in `config.yaml` to use a different input path.
 
 ### Video Format
 - **mp4**: The system expects `{index}.mp4` in the `videos_dir` (default: `data/video`).
@@ -95,15 +96,15 @@ Use `uvx` to run the evaluation script. This will automatically set up the envir
 uvx --with-editable . --python 3.11 python eval.py --index 4
 
 # Evaluate with a specific profile defined in config.yaml
-uvx --with-editable . --python 3.11 python eval.py --index 4 --profile gpt5_agentic
+uvx --with-editable . --python 3.11 python eval.py --index 4 --profile gemini_agentic
 ```
 
 ### Batch Processing (Parallel) ⚡
 You can use `xargs` with `uvx` to run multiple evaluations in parallel.
 
 ```bash
-# Run indices 1 to 100 with 10 concurrent processes
-seq 1 100 | xargs -P 10 -I {} uvx --with-editable . --python 3.11 python eval.py --index {} --profile gpt5_agentic
+# Run indices 1 to 500 with 10 concurrent processes
+seq 1 500 | xargs -P 10 -I {} uvx --with-editable . --python 3.11 python eval.py --index {} --profile gemini_agentic
 ```
 
 The results (trajectories) will be saved in the `trajs/<profile_name>` directory.

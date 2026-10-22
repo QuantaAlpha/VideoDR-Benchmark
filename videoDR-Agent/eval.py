@@ -32,6 +32,26 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from langchain_core.messages import HumanMessage
 
+def load_benchmark_csv(csv_path):
+    """Read current named-column data or legacy headerless three-column data."""
+    named = pd.read_csv(csv_path, encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    id_column = "id" if "id" in named.columns else "index"
+    if {id_column, "question", "answer"}.issubset(named.columns):
+        frame = named[[id_column, "question", "answer"]].rename(columns={id_column: "index"}).copy()
+    else:
+        frame = pd.read_csv(
+            csv_path, header=None, names=["index", "question", "answer"],
+            encoding="utf-8-sig", usecols=[0, 1, 2], dtype=str, keep_default_na=False,
+        )
+    identifiers = pd.to_numeric(frame["index"], errors="raise")
+    if identifiers.isna().any() or (identifiers % 1 != 0).any():
+        raise ValueError("Benchmark IDs must be integers")
+    frame["index"] = identifiers.astype("int64")
+    if frame["index"].duplicated().any():
+        raise ValueError("Benchmark IDs must be unique")
+    return frame
+
+
 def load_config(profile_name=None):
     """Load and merge configuration"""
     if not os.path.exists("config.yaml"):
@@ -165,7 +185,7 @@ async def run_single(index: int, config: dict) -> dict:
         print(f"[ERROR] CSV input file does not exist: {csv_input}")
         return
 
-    df = pd.read_csv(csv_input, header=None, names=['index', 'question', 'answer'], encoding='utf-8', usecols=[0, 1, 2])
+    df = load_benchmark_csv(csv_input)
     row = df[df['index'] == index]
     if row.empty:
         print(f"[ERROR] index={index} does not exist")

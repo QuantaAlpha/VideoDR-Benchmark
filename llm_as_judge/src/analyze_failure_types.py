@@ -555,8 +555,8 @@ def main():
     parser = argparse.ArgumentParser(description='Analyze failure types using LLM')
     parser.add_argument('--max_workers', type=int, default=4, 
                        help='Number of concurrent workers (default: 4)')
-    parser.add_argument('--excel_file', type=str, default='Video-LLM.xlsx',
-                       help='Path to evaluation Excel file (default: Video-LLM.xlsx)')
+    parser.add_argument('--excel_file', type=str, required=True,
+                       help='Path to a separately supplied manual evaluation workbook (required)')
     parser.add_argument('--trace_dir', type=str, default='traces',
                        help='Path to trace directory (default: traces)')
     parser.add_argument('--output_file', type=str, default='failure_analysis_llm.xlsx',

@@ -8,7 +8,7 @@
 
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
 
-<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset - 100](https://huggingface.co/datasets/Yu2020/VideoDR)] [[📊 Dataset - 500](https://huggingface.co/datasets/strike20023/VideoDR)] [[🌐 LeaderBoard](https://videodr-benchmark.github.io/#/home)] </div></font>
+<font size=7><div align='center' > [[📖 Paper](http://arxiv.org/abs/2601.06943)] [[📊 Dataset - 500](https://huggingface.co/datasets/strike20023/VideoDR)] [[📁 Legacy Dataset - 100](https://huggingface.co/datasets/Yu2020/VideoDR)] [[🌐 LeaderBoard](https://videodr-benchmark.github.io/#/home)] </div></font>
 
 ---
 
@@ -35,6 +35,12 @@ It is designed to evaluate the capability of Video Agent to perform complex reas
 * 🧩 **Evidence Synthesis**: Combine video clues and web evidence to provide a **verifiable** factual answer.
 
 
+# 📊 Current Dataset
+
+The current benchmark is the **500-example** [Hugging Face dataset](https://huggingface.co/datasets/strike20023/VideoDR), containing `test.csv` and `videos/1.mp4` through `videos/500.mp4`. The 100-example release linked above is historical. See [data preparation](videoDR-Agent/README.md) for running the current dataset.
+
+The historical 100-example manual evaluation workbook is no longer bundled. It contained model outputs and correctness annotations, not the complete current benchmark.
+
 # 🔧 Evaluation Tools
 
 We provide LLM-based evaluation tools (`llm_as_judge`) for model evaluation and failure analysis.
@@ -42,8 +48,7 @@ We provide LLM-based evaluation tools (`llm_as_judge`) for model evaluation and 
 ### Installation
 
 ```bash
-cd llm_as_judge
-pip install -r requirements.txt
+pip install -r llm_as_judge/requirements.txt
 ```
 
 ### Configuration
@@ -60,17 +65,19 @@ LLM_API_KEY=your_api_key
 ```
 python llm_as_judge/src/judge_answers.py \
     --workers 5 \
-    --predictions llm_as_judge/data/predictions.json
+    --predictions path/to/predictions.json
 ```
 
 ### Failure analysis
 
 ```
 python llm_as_judge/src/analyze_failure_types.py \
-    --excel_file llm_as_judge/data/Video-LLM.xlsx \
+    --excel_file path/to/manual_evaluation.xlsx \
     --trace_dir results/traces \
     --max_workers 4
 ```
+
+Failure analysis requires a separately supplied manual evaluation workbook and matching traces; the benchmark CSV is not a replacement for this workbook. The workbook uses a grouping row, headers on the second row, then positional ID, URL, question, label, reference-answer, model-answer and correctness columns as defined in `load_manual_evaluation`.
 
 # 📚 Citation
 

@@ -1,6 +1,6 @@
 # General Configuration
 common:
-  csv_input: "data/VideoDR.csv"
+  csv_input: "data/test.csv"
   traj_dir: "trajs"
   max_key_frame: 20
   langchain_tracing_v2: "false"
