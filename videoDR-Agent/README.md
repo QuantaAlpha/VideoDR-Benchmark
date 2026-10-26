@@ -142,4 +142,4 @@ Set your API keys in your environment variables or `.env` file (see `env.example
 
 ## License 📜
 
-[MIT](LICENSE)
+[MIT](../LICENSE)

@@ -4,6 +4,7 @@
   <img src="https://img.shields.io/badge/Task-Video_Deep_Research-C92D39" alt="Task">
   <img src="https://img.shields.io/badge/Paradigm-Agentic_%26_Workflow-C92D39" alt="Paradigm">
   <img src="https://img.shields.io/badge/Benchmark-VideoDR-007EC6" alt="Benchmark">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
 </p>
 
 ![VideoDR Task Overview](./assets/6963e7b13de6cf860976558e.png)
@@ -41,14 +42,53 @@ The current benchmark is the **500-example** [Hugging Face dataset](https://hugg
 
 The historical 100-example manual evaluation workbook is no longer bundled. It contained model outputs and correctness annotations, not the complete current benchmark.
 
+# 🗂️ Repository Structure
+
+| Path | Contents |
+| --- | --- |
+| [`videoDR-Agent/`](videoDR-Agent/) | LangGraph-based agentic and workflow baselines, configuration, and evaluation runner |
+| [`llm_as_judge/`](llm_as_judge/) | Answer judging and failure analysis tools |
+| [`assets/`](assets/) | Figures and tables for the benchmark |
+
+# 🚀 Quick Start
+
+Use **Python 3.10 or later**. Run the following commands to install the baseline:
+
+```bash
+git clone https://github.com/QuantaAlpha/VideoDR-Benchmark.git
+cd VideoDR-Benchmark/videoDR-Agent
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+cp env.example .env
+```
+
+1. Set `OPENAI_API_KEY` and `TAVILY_API_KEY` in `.env`. The bundled profiles use OpenRouter's OpenAI-compatible endpoint, so `OPENAI_API_KEY` must contain a key for the configured provider.
+2. Download `test.csv` from the [current dataset](https://huggingface.co/datasets/strike20023/VideoDR) to `data/test.csv`, and place the downloaded videos in `data/video/` as `1.mp4` through `500.mp4`.
+3. Review the research and summarization models and their endpoints in [`config.yaml`](videoDR-Agent/config.yaml) and [the configuration defaults](videoDR-Agent/src/agentic_deep_research/configuration.py).
+
+Run one example from `videoDR-Agent/`:
+
+```bash
+# Agentic baseline
+python eval.py --index 4 --profile gemini_agentic
+
+# Workflow baseline
+python eval.py --index 4 --profile gemini_workflow
+```
+
+Trajectories are saved to `trajs/<profile_name>/<index>.json`, including the question, generated answer, ground truth, and execution state. Existing trajectory files are skipped. See the [agent guide](videoDR-Agent/README.md) for key-frame inputs, custom profiles, and parallel evaluation.
+
 # 🔧 Evaluation Tools
 
 We provide LLM-based evaluation tools (`llm_as_judge`) for model evaluation and failure analysis.
 
+Run the commands in this section from the repository root.
+
 ### Installation
 
 ```bash
-pip install -r llm_as_judge/requirements.txt
+python -m pip install -r llm_as_judge/requirements.txt
 ```
 
 ### Configuration
@@ -60,17 +100,42 @@ LLM_BASE_URL=your_api_base_url
 LLM_API_KEY=your_api_key
 ```
 
+The judge currently uses the model name `/model/DeepSeek-V3` in [`judge_answers.py`](llm_as_judge/src/judge_answers.py). Use an endpoint that serves this model, or update the model name to match your endpoint.
+
+### Prediction Format
+
+The judge expects a JSON object keyed by question ID. Each question contains its reference answer and predictions grouped by model and mode:
+
+```json
+{
+  "1": {
+    "question": "Example question",
+    "ground_truth": "Reference answer",
+    "model_name": {
+      "my-model": {
+        "agentic": {"answer": "Model answer"},
+        "workflow": {"answer": "Model answer"}
+      }
+    }
+  }
+}
+```
+
+Include only the modes you evaluated (`agentic` and/or `workflow`). Aggregate the runner's per-example trajectory files into this format before judging; an individual trajectory file is not a `predictions.json` file.
+
 ### LLM as Judge
 
-```
+```bash
 python llm_as_judge/src/judge_answers.py \
     --workers 5 \
     --predictions path/to/predictions.json
 ```
 
+The judge writes per-answer decisions and reasoning to `judge_results.csv`, with an Excel copy and a text report. **The summary report currently uses a fixed denominator of 100.** For the 500-example release, calculate accuracy from the per-answer results using the actual evaluation size, and report any missing or failed examples separately.
+
 ### Failure analysis
 
-```
+```bash
 python llm_as_judge/src/analyze_failure_types.py \
     --excel_file path/to/manual_evaluation.xlsx \
     --trace_dir results/traces \
@@ -91,6 +156,12 @@ If you find this benchmark useful for your research, please cite:
   year={2026}
 }
 ```
+
+# 📄 License
+
+The code in this repository is licensed under the [MIT License](LICENSE).
+
+External datasets, source videos, and other third-party materials are subject to their respective licenses and terms. The code license does not grant rights to those materials; consult the dataset pages and original sources before reuse.
 
 # ✉️ Contact
 
